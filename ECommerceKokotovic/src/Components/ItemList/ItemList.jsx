@@ -1,5 +1,5 @@
 import Item from '../Item/Item'
-const ItemList = (productos) => {
+const ItemList = ({productos}) => {
   return (
     <div style={{
         display: "flex",

@@ -1,7 +1,6 @@
-import { Route, Navigate, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Route, Navigate, BrowserRouter as Router, Routes} from 'react-router-dom'
 
-
-import { NavBar } from './Components/NavBar/NavBar'
+import NavBar from './Components/NavBar/NavBar'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
 
@@ -14,10 +13,10 @@ function App() {
   return (
     <div>
     <Router>
-      <NavBar />
+      <NavBar/>
       <Routes>
         <Route path='/' element={<ItemListContainer />} />
-        <Route path='/categoria/:category' element={<ItemListContainer />} />
+        <Route path='/categoria/:categoria' element={<ItemListContainer />} />
         <Route path='/detail/:pid' element={<ItemDetailContainer />} />
         <Route path='*' element={ <Navigate to='/' /> } />      
       </Routes>

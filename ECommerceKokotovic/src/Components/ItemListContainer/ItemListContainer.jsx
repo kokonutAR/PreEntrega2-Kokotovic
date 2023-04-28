@@ -14,14 +14,14 @@ const ItemListContainer = () => {
     useEffect(() => {
         if (!categoria) {
             mFetch()
-            .then(resultado => {
+            .then((resultado) => {
                 setProductos(resultado)
             })
             .catch(error => console.log(error))
             .finally(() => setIsLoading(false))
         }else{
             mFetch()
-            .then(resultado => {
+            .then((resultado) => {
                 setProductos(resultado.filter(producto => producto.categoria === categoria))
             })
             .catch(error => console.log(error))

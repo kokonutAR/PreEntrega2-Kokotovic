@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from "react-router-dom"
 
 
 export const NavBar = () => { 
@@ -13,14 +14,14 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link to='/category/Original' className={ ({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'}>Original</Nav.Link>
-            <Nav.Link to='/category/Italiana' className={ ({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'}>Italianas</Nav.Link>                   
-            <Nav.Link to='/category/Sabor del Mes' className={ ({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary'}>Sabor del Mes</Nav.Link>                   
+            <NavLink to='/categoria/Original'>Original</NavLink>
+            <NavLink to='/categoria/Italiana'>Italianas</NavLink>                   
+            <NavLink to='/categoria/Sabor del Mes'>Sabor del Mes</NavLink>                   
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#cartWidget">
+            <NavLink href="#cartWidget">
               <CartWidget/>
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

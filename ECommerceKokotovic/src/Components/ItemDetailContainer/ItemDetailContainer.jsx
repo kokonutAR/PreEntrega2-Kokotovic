@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { ItemDetail } from "../ItemDetail/ItemDetail"
+import ItemDetail from "../ItemDetail/ItemDetail"
 import { useEffect } from "react"
 import { mFetch } from "../../mFetch"
 import { useState } from "react"
@@ -7,6 +7,7 @@ import { useState } from "react"
 const ItemDetailContanier = () => {
     const [producto, setProducto] = useState({})
     const [isLoading, setIsLoading] = useState({})
+
     const { pid } = useParams()
 
     useEffect(() => {
