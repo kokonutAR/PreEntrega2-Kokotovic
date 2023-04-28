@@ -10,16 +10,16 @@ export const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="xl" bg="success" variant="dark">
       <Container>
-        <Navbar.Brand href="#inicio">Pizzeria Los Amigos</Navbar.Brand>
+        <Navbar.Brand className='alert alert-danger' href="/">Pizzeria Los Amigos</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink to='/categoria/Original'>Original</NavLink>
-            <NavLink to='/categoria/Italiana'>Italianas</NavLink>                   
-            <NavLink to='/categoria/Sabor del Mes'>Sabor del Mes</NavLink>                   
+            <NavLink to='/categoria/Original' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Original</NavLink>
+            <NavLink to='/categoria/Italiana' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Italianas</NavLink>                   
+            <NavLink to='/categoria/Sabor del Mes' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Sabor del Mes</NavLink>                  
           </Nav>
           <Nav>
-            <NavLink href="#cartWidget">
+            <NavLink className='btn btn-danger' href="#cartWidget">
               <CartWidget/>
             </NavLink>
           </Nav>

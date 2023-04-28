@@ -6,11 +6,8 @@ import ItemList from '../ItemList/ItemList'
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-
     const { categoria } = useParams()
-
-    //const [porductos, loading] = useFetch()
-
+    
     useEffect(() => {
         if (!categoria) {
             mFetch()

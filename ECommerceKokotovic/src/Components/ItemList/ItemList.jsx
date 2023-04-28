@@ -6,7 +6,7 @@ const ItemList = ({productos}) => {
         flexDirection: 'row',
         flexWrap: "wrap"
     }}>
-        {productos.map( producto => <Item key={producto.id} {...producto}/>)}
+        {productos.map( producto => <Item key={producto.id} {...producto} />)}
     </div>
   )
 }

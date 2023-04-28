@@ -24,7 +24,6 @@ const ItemDetail = (producto) => {
                 <ItemCount onAdd={onAdd}/>
             :
                 <>
-                    <Link to={'/cart'} className="btn btn-outline-danger">Terminar Compra</Link>
                     <Link to={'/'} classNmae="btn btn-outline-succes">Seguir la Compra</Link>
                 </>
         }

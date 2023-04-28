@@ -8,14 +8,14 @@ const ItemDetailContanier = () => {
     const [producto, setProducto] = useState({})
     const [isLoading, setIsLoading] = useState({})
 
-    const { pid } = useParams()
+    const {pid} = useParams()
 
     useEffect(() => {
         mFetch(pid)
-        .then(resp => setProducto(resp))
-        .catch(err => console.log(err))
+        .then(respuesta => setProducto(respuesta))
+        .catch(error => console.log(error))
         .finally(() => setIsLoading(false))
-    }, )
+    }, [])
 
     console.log(pid)
     return (

@@ -13,7 +13,9 @@ const Item = (producto) => {
             <label>Categoria: {categoria}</label>
         </div>
         <div className="card-footer">
-            <button className="btn btn-outline-dark">Detalle</button>
+            <Link to = {`/detail/${id}`} >
+                <button className="btn btn-outline-dark">Detalle</button>
+            </Link>
         </div>
     </div> )
 }
