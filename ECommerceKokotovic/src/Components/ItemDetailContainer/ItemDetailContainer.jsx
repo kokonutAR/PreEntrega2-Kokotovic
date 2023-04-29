@@ -15,7 +15,7 @@ const ItemDetailContanier = () => {
         .then(respuesta => setProducto(respuesta))
         .catch(error => console.log(error))
         .finally(() => setIsLoading(false))
-    }, [])
+    }, )
 
     console.log(pid)
     return (

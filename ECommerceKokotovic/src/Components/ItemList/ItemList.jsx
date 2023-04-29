@@ -4,7 +4,8 @@ const ItemList = ({productos}) => {
     <div style={{
         display: "flex",
         flexDirection: 'row',
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+        padding: '20px'
     }}>
         {productos.map( producto => <Item key={producto.id} {...producto} />)}
     </div>

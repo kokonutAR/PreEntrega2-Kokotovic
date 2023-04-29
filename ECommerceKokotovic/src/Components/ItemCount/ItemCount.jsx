@@ -1,15 +1,15 @@
 import { useContador } from "../Hook/HookContador"
 
-const ItemCount = ({initial = 1, stock = 10, onAdd}) => {
+const ItemCount = ({initial = 1, stock = 10}) => {
     
     const {contador, sumar, restar} = useContador(initial, 1, stock)
 
 return(
     <div>
         <p> {contador}</p>
-        <button onClick={sumar}> + </button>
-        <button onClick={restar}> - </button>
-        <button>Agregar al Carrito</button>
+        <button onClick={restar} className="m-1"> - </button>
+        <button onClick={sumar} className="m-1"> + </button>
+        <button className="m-1">Agregar al Carrito</button>
     </div>
 )
 
