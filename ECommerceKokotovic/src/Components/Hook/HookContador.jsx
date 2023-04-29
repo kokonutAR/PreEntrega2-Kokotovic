@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const useContador = (initial = 0, min, max) => {
+const HookContador = (initial = 0, min, max) => {
     const [contador, setContador] = useState(initial)
 
     const sumar = () => {
@@ -16,3 +16,5 @@ export const useContador = (initial = 0, min, max) => {
     }
     return{contador, sumar, restar}
 }
+
+export default HookContador

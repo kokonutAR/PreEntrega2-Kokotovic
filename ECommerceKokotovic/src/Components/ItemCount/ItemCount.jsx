@@ -1,8 +1,8 @@
-import { useContador } from "../Hook/HookContador"
+import HookContador from '../Hook/HookContador'
 
 const ItemCount = ({initial = 1, stock = 10}) => {
     
-    const {contador, sumar, restar} = useContador(initial, 1, stock)
+    const {contador, sumar, restar} = HookContador(initial, 1, stock)
 
 return(
     <div>
