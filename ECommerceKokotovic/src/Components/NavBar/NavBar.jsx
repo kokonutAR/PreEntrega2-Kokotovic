@@ -19,7 +19,7 @@ export const NavBar = () => {
             <NavLink to='/categoria/Sabor del Mes' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Sabor del Mes</NavLink>                  
           </Nav>
           <Nav>
-            <NavLink className='btn btn-danger' href="#cartWidget">
+            <NavLink className='btn btn-danger' href="#cartWidget" to='/cart'>
               <CartWidget/>
             </NavLink>
           </Nav>

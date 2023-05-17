@@ -1,18 +1,18 @@
-import HookContador from '../Hook/HookContador'
+import HookContador from '../../Hook/HookContador'
 
-const ItemCount = ({initial = 1, stock = 10}) => {
+const ItemCount = ({initial = 1, stock = 10, onAdd}) => {
     
     const {contador, sumar, restar} = HookContador(initial, 1, stock)
 
 return(
-    <div>
-        <p> {contador}</p>
+    <center>
+        <p>{contador}</p>
         <button onClick={restar} className="m-1"> - </button>
         <button onClick={sumar} className="m-1"> + </button>
-        <button className="m-1">Agregar al Carrito</button>
-    </div>
+        <button onClick={()=>{onAdd(contador)}}>Agregar al Carrito</button>
+    </center>
 )
 
 }
 
-export default ItemCount;
+export default ItemCount
