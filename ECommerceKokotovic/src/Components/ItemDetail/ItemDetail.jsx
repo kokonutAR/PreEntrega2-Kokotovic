@@ -20,9 +20,9 @@ function ItemDetail ({ producto }) {
                 <div className="col">
                     <img src={producto.img} alt="imagen" />
                     <h3>Nombre: {producto.name}</h3>
-                    <h3>Categoria: {producto.categoria}</h3>
+                    <h3>Categoria: {producto.category}</h3>
                     <h3>Precio: {producto.price}</h3>
-                    <h3>Descripcion: {producto.descripcion}</h3>
+                    <h3>Descripcion: {producto.description}</h3>
                 </div>
                 <div className="col">
                     {!isCant ?

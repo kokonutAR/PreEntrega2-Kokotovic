@@ -1,5 +1,8 @@
+import { memo } from 'react'
+import { Link } from 'react-router-dom'
 import Item from '../Item/Item'
 const ItemList = ({productos}) => {
+  console.log('ItemList')
   return (
     <div style={{
         display: "flex",
@@ -11,5 +14,6 @@ const ItemList = ({productos}) => {
     </div>
   )
 }
+
 
 export default ItemList

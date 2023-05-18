@@ -14,9 +14,9 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink to='/categoria/Original' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Original</NavLink>
-            <NavLink to='/categoria/Italiana' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Italianas</NavLink>                   
-            <NavLink to='/categoria/Sabor del Mes' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Sabor del Mes</NavLink>                  
+            <NavLink to='/category/Original' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Original</NavLink>
+            <NavLink to='/category/Italiana' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Italianas</NavLink>                   
+            <NavLink to='/category/Sabor del Mes' className={ ({isActive}) => isActive ? 'btn btn-danger' : 'btn btn-outline-succes'}>Sabor del Mes</NavLink>                  
           </Nav>
           <Nav>
             <NavLink className='btn btn-danger' href="#cartWidget" to='/cart'>

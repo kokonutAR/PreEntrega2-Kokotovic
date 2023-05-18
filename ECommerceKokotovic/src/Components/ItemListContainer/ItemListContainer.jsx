@@ -6,10 +6,10 @@ import ItemList from '../ItemList/ItemList'
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const { categoria } = useParams()
+    const { category } = useParams()
     
     useEffect(() => {
-        if (!categoria) {
+        if (!category) {
             mFetch()
             .then((resultado) => {
                 setProductos(resultado)
@@ -19,12 +19,12 @@ const ItemListContainer = () => {
         }else{
             mFetch()
             .then((resultado) => {
-                setProductos(resultado.filter(producto => producto.categoria === categoria))
+                setProductos(resultado.filter(producto => producto.category === category))
             })
             .catch(error => console.log(error))
             .finally(() => setIsLoading(false))
         }
-    }, [categoria])
+    }, [category])
 
     return (
         isLoading ? 
