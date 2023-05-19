@@ -10,7 +10,7 @@ export const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="xl" bg="success" variant="dark">
       <Container>
-        <Navbar.Brand className='alert alert-danger' href="/">Pizzeria Los Amigos</Navbar.Brand>
+        <Navbar.Brand className='btn btn-danger' href="/">Pizzeria Los Amigos</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

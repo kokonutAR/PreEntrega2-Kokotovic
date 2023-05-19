@@ -1,29 +1,32 @@
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useEffect } from "react"
-import { mFetch } from "../../mFetch"
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { useState } from "react"
 
 const ItemDetailContanier = () => {
-    const [producto, setProducto] = useState({})
+    const [product, setProduct] = useState({})
     const [isLoading, setIsLoading] = useState({})
 
     const {pid} = useParams()
-
     useEffect(() => {
-        mFetch(pid)
-        .then(respuesta => setProducto(respuesta))
-        .catch(error => console.log(error))
-        .finally(() => setIsLoading(false))
-    }, )
+        const dbFirestore = getFirestore()
+        const queryDoc = doc(dbFirestore, 'products', pid)
+        
+        getDoc(queryDoc)
+            .then(resp => setProduct( { id: resp.id, ...resp.data() } ) )
+            .catch(err => console.log(err))
+            .finally(() => setIsLoading(false))
+    }, [])
 
     console.log(pid)
+    
     return (
         <div>
             {isLoading ?
             <h2>Cargando...</h2>
             :
-            <ItemDetail producto={producto}  />
+            <ItemDetail product={product}  />
             }
         </div>
     )

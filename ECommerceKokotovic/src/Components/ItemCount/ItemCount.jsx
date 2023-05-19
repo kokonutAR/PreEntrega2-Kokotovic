@@ -7,9 +7,9 @@ const ItemCount = ({initial = 1, stock = 10, onAdd}) => {
 return(
     <center>
         <p>{contador}</p>
-        <button onClick={restar} className="m-1"> - </button>
-        <button onClick={sumar} className="m-1"> + </button>
-        <button onClick={()=>{onAdd(contador)}}>Agregar al Carrito</button>
+        <button onClick={restar} className="m-1 btn btn-outline-danger"> - </button>
+        <button onClick={sumar} className="m-1 btn btn-outline-success"> + </button>
+        <button onClick={()=>{onAdd(contador)}} className='btn btn-outline-primary'>Agregar al Carrito</button>
     </center>
 )
 

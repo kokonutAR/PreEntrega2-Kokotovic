@@ -1,7 +1,5 @@
-import { memo } from 'react'
-import { Link } from 'react-router-dom'
 import Item from '../Item/Item'
-const ItemList = ({productos}) => {
+const ItemList = ({products}) => {
   console.log('ItemList')
   return (
     <div style={{
@@ -10,7 +8,7 @@ const ItemList = ({productos}) => {
         flexWrap: "wrap",
         padding: '20px'
     }}>
-        {productos.map( producto => <Item key={producto.id} {...producto} />)}
+        {products.map( product => <Item key={product.id} {...product} />)}
     </div>
   )
 }
