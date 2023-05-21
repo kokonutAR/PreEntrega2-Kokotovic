@@ -2,12 +2,7 @@ import Item from '../Item/Item'
 const ItemList = ({products}) => {
   console.log('ItemList')
   return (
-    <div style={{
-        display: "flex",
-        flexDirection: 'row',
-        flexWrap: "wrap",
-        padding: '20px'
-    }}>
+    <div className='row text-center offset-2'>
         {products.map( product => <Item key={product.id} {...product} />)}
     </div>
   )

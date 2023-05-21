@@ -16,15 +16,15 @@ function ItemDetail ({ product }) {
     
     return (
         <>
-            <div className="row text-center p-5">
+            <div className="col text-center p-5">
                 <div className="col">
-                    <img src={product.img} alt="imagen" />
+                    <img src={product.img} alt="imagen" className="p-5" />
                     <h3>Nombre: {product.name}</h3>
                     <h3>Categoria: {product.category}</h3>
                     <h3>Precio: {product.price}</h3>
                     <h3>Descripcion: {product.description}</h3>
                 </div>
-                <div className="col">
+                <div className="col p-5">
                     {!isCant ?
                         <ItemCount onAdd={onAdd} />
                         :

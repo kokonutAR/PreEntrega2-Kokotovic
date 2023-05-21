@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Link } from "react-router-dom"
 
 const CartContainer = () => {
+    const [id, setId] = useState('')
     const [dataForm, setDataForm] = useState({
         name: '',
         phone: '',
@@ -24,7 +25,14 @@ const CartContainer = () => {
         const ordersCollection = collection(dbFirestore, 'orders')
 
         addDoc(ordersCollection, order)
-        .then(resp => console.log(resp))
+        .then(resp => setId(resp.id))
+        .catch(err => console.log(err))
+        .finally(() => {
+            setTimeout(()=>{
+                vaciarCarrito()
+                setId('')
+            },3000)
+        })
     }
 
     const handleOnChange = (evt) =>{
@@ -40,6 +48,7 @@ const CartContainer = () => {
 
     return(
         <div>
+            {id.length !== 0 && <h3>El Id de la Compra es: {id}</h3>} 
             {cartList.length !== 0 ? 
                 <>
                     {cartList.map(prod => (
@@ -54,7 +63,7 @@ const CartContainer = () => {
 
                     <button onClick={vaciarCarrito} className="btn btn-outline-danger"> Vaciar Carrito</button>
 
-                    <form>
+                    <form onSubmit={generarOrden}> 
                         <input
                             type="text"
                             name="name"
